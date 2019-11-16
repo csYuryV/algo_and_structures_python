@@ -16,7 +16,7 @@ try:
     x2 = float(input('x2 <- '))
     y2 = float(input('y2 <- '))
 except ValueError:
-    print('Неккоректный ввод. Программа завершена.')
+    print('Некорректный ввод. Программа завершена.')
     exit(-1)
 
 if x1 == x2:

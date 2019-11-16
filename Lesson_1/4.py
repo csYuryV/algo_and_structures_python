@@ -26,7 +26,7 @@ except ValueError:
 if mini > maxi:
     mini, maxi = maxi, mini
 if mini == maxi:
-    print('Неккоректный ввод. Программа завершена.')
+    print('Некорректный ввод. Программа завершена.')
     exit(-1)
 
 print(f'Случайное целое число в диапазоне от {mini} до {maxi } -> {int(random.random() * (maxi - mini + 1) +  mini)}')
