@@ -30,7 +30,8 @@ while True:
     except ValueError:
         print('Некорректный ввод. программа завершена')
         exit(-1)
-    if number < 0: number *= -1
+    if number < 0:
+        number *= -1
     sum_of_digits = calculate_the_sum_of_the_digits(number)
     if sum_of_digits > maximum_sum_of_digits:
         maximum_sum_of_digits = sum_of_digits

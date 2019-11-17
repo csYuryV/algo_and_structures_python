@@ -65,6 +65,7 @@ while True:
 verif_loop.join()
 
 if verification_of_the_statement():
-    print(f'Равенство истинно для всех значений n = (1, ..., {verification_of_the_statement.get_i()})')
+    print(
+        f'Равенство истинно для всех значений n = (1, ..., {verification_of_the_statement.get_i()})')
 else:
     print(f'Равенство ложно для {str(verification_of_the_statement)}')

@@ -20,7 +20,8 @@ def count_how_many_digits_in_number(number, digit):
 
 
 try:
-    number_of_input_numbers = int(input('Укажите количество вводимых чисел <- '))
+    number_of_input_numbers = int(
+        input('Укажите количество вводимых чисел <- '))
     digit = int(input('Укажите цифру которую искать <- '))
 except ValueError:
     print('Некорректный ввод. программа завершена')
@@ -36,7 +37,8 @@ while i <= number_of_input_numbers:
     except ValueError:
         print('Некорректный ввод.')
         continue
-    total_of_digits = total_of_digits + count_how_many_digits_in_number(number, digit)
+    total_of_digits = total_of_digits + \
+        count_how_many_digits_in_number(number, digit)
     i += 1
 
 print(f'Цифра {digit} была встречена {total_of_digits} раз(а)')

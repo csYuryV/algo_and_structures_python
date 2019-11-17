@@ -12,5 +12,6 @@ BEGIN_KEY = 32
 END_KEY = 127
 j = 0
 for i in range(BEGIN_KEY, END_KEY + 1):
-    if ((i - BEGIN_KEY) % 10 == 0) and i != 32: print('\n')
+    if ((i - BEGIN_KEY) % 10 == 0) and i != 32:
+        print('\n')
     print(f'{i}:\'{chr(i)}\' ', end='')

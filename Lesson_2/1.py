@@ -20,7 +20,8 @@ while True:
     except ValueError:
         print('Некорректный ввод.')
         continue
-    operator = input('Оператор (\'+\', \'-\', \'*\', \'/\') или 0 для выхода <- ')
+    operator = input(
+        'Оператор (\'+\', \'-\', \'*\', \'/\') или 0 для выхода <- ')
     if operator == '+':
         c = a + b
     elif operator == '-':
