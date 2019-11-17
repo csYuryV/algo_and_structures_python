@@ -8,4 +8,34 @@
 снова запрашивать знак операции.
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
+
+20191116 Sikorskiy Yuriy
+cs.yury.v@pm.me
+
 """
+while True:
+    try:
+        a = float(input('Первый операнд <- '))
+        b = float(input('Второй операнд <- '))
+    except ValueError:
+        print('Некорректный ввод.')
+        continue
+    operator = input('Оператор (\'+\', \'-\', \'*\', \'/\') или 0 для выхода <- ')
+    if operator == '+':
+        c = a + b
+    elif operator == '-':
+        c = a - b
+    elif operator == '*':
+        c = a * b
+    elif operator == '/':
+        try:
+            c = a / b
+        except ZeroDivisionError:
+            print('Деление на ноль в арифметике действительных чисел не имеет смысла')
+            continue
+    elif operator == '0':
+        exit(0)
+    else:
+        print('Некорректный ввод.')
+        continue
+    print(f'{a} {operator} {b} = {c}\n')

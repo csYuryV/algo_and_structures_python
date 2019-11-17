@@ -4,4 +4,31 @@
 неудачной попытки должно сообщаться больше или меньше введенное пользователем
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
+
+20191117 Sikorskiy Yuriy
+cs.yury.v@pm.me
+
 """
+
+import random
+
+num = random.randint(0, 100)
+i = 0
+while i <= 9:
+    try:
+        num_from_user = int(input('(0...100) <- '))
+    except ValueError:
+        print('Некорректный ввод.')
+        continue
+    if num_from_user < 0 or num_from_user > 100:
+        print('Некорректный ввод.')
+        continue
+    if num == num_from_user:
+        print('Вы отгадали число')
+        exit(0)
+    elif num < num_from_user:
+        print('Загаданное число меньше')
+    else:
+        print('Загаданное число больше')
+    i += 1
+print(f'Вы не отгадали число за 10 попыток(хотя достаточно 7 попыток).\nБыло загадано число: {num}')
