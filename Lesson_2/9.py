@@ -7,16 +7,8 @@ cs.yury.v@pm.me
 
 """
 
-
 def calculate_the_sum_of_the_digits(number):
-    total_sum_digit = 0
-    i = number
-    while i > 0:
-        total_sum_digit += (i % 10)
-        i = i // 10
-
-    return total_sum_digit
-
+        return number % 10 if number // 10 == 0 else number % 10 +  calculate_the_sum_of_the_digits(number//10)
 
 number_with_maximum_digits = 0
 maximum_sum_of_digits = 0

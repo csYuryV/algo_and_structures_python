@@ -12,24 +12,30 @@ cs.yury.v@pm.me
 
 import random
 
-num = random.randint(0, 100)
-i = 0
-while i <= 9:
-    try:
-        num_from_user = int(input('(0...100) <- '))
-    except ValueError:
-        print('Некорректный ввод.')
-        continue
-    if num_from_user < 0 or num_from_user > 100:
-        print('Некорректный ввод.')
-        continue
-    if num == num_from_user:
-        print('Вы отгадали число')
+
+def a(num, i):
+    if i == 0:
+        print(print(
+            f'Вы не отгадали число за 10 попыток(хотя достаточно 7 попыток).\nБыло загадано число: {num}'))
         exit(0)
-    elif num < num_from_user:
-        print('Загаданное число меньше')
     else:
-        print('Загаданное число больше')
-    i += 1
-print(
-    f'Вы не отгадали число за 10 попыток(хотя достаточно 7 попыток).\nБыло загадано число: {num}')
+        while True:
+            try:
+                num_from_user = int(input('(0...100) <- '))
+            except ValueError:
+                print('Некорректный ввод.')
+                continue
+            if num_from_user < 0 or num_from_user > 100:
+                print('Некорректный ввод.')
+                continue
+            break
+        if num == num_from_user:
+            print('Вы отгадали число')
+            exit(0)
+        elif num < num_from_user:
+            print('Загаданное число меньше')
+        else:
+            print('Загаданное число больше')
+        a(num, i - 1)
+
+a(random.randint(0, 100), 10)

@@ -10,13 +10,12 @@ cs.yury.v@pm.me
 
 
 def count_how_many_digits_in_number(number, digit):
-    i = number
-    number_of_digits = 0
-    while i > 0:
-        if i % 10 == digit:
-            number_of_digits += 1
-        i = i // 10
-    return number_of_digits
+    if number // 10 == 0:
+        return 1 if number % 10 == digit else 0
+    else:
+        return 1 + count_how_many_digits_in_number(number // 10,
+                                                   digit) if number % 10 == digit else count_how_many_digits_in_number(
+            number // 10, digit)
 
 
 try:
@@ -38,7 +37,7 @@ while i <= number_of_input_numbers:
         print('Некорректный ввод.')
         continue
     total_of_digits = total_of_digits + \
-        count_how_many_digits_in_number(number, digit)
+                      count_how_many_digits_in_number(number, digit)
     i += 1
 
 print(f'Цифра {digit} была встречена {total_of_digits} раз(а)')
