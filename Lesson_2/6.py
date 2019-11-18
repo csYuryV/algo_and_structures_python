@@ -38,4 +38,5 @@ def a(num, i):
             print('Загаданное число больше')
         a(num, i - 1)
 
+
 a(random.randint(0, 100), 10)
