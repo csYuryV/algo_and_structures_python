@@ -42,42 +42,45 @@ def apply_the_sundarama_method(n):
     return lst
 
 
-def draw_plt(x, y_er, y_su):
+def draw_plt(x, y_er, y_su, delta):
     fig = plt.figure(figsize=plt.figaspect(0.75))
     ax = fig.add_subplot(111)
 
     # ax.plot(x, y_er, color='lightblue', linewidth=3)
     ax.plot(x, y_su, color='lightblue', linewidth=1)
-    ax.scatter(x, y_er, color='darkgreen', marker='+')
-
+    ax.plot(x, y_er, color='blue', linewidth=1)
+    ax.plot(x, delta, color='red', linewidth=1)
     plt.savefig('2_resheto.png')
     plt.show()
 
 
 def main():
     N_BEGIN = 10
-    N_END = 4000
-    N_STEP = 200
+    N_END = 400000
+    N_STEP = 2000
 
     x = []
     y_er = []
     y_su = []
+    delta = []
 
     for i in range(N_BEGIN, N_END, N_STEP):
         time_er = timeit.timeit(
             f'apply_the_eratosthenes_method({i})',
-            number=10000,
+            number=10,
             globals=globals())
         time_su = timeit.timeit(
             f'apply_the_sundarama_method({i})',
-            number=10000,
+            number=10,
             globals=globals())
         x.append(i)
         y_er.append(time_er)
         y_su.append(time_su)
-        print(f'i = {i}, Er -> {time_er:.5f} Su -> {time_su:.5f}')
+        d = (time_su - time_er)
+        delta.append(d * 4)
+        print(f'i = {i:5d}, Er -> {time_er:.5f} Su -> {time_su:.5f} delta -> {d:.5f}')
 
-    draw_plt(x, y_er, y_su)
+    draw_plt(x, y_er, y_su, delta)
 
 
 if __name__ == "__main__":
