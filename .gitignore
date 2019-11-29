@@ -107,3 +107,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 /*.zip
+/Lesson_4/2a.py
