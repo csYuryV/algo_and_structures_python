@@ -12,6 +12,7 @@ cs.yury.v@pm.me
 и разрядность вашей ОС.
 '''
 
+# Python 3.7.5
 # Операционная система: Kubuntu 19.10
 # Версия KDE Plasma: 5.16.5
 # Версия KDE Frameworks: 5.62.0
