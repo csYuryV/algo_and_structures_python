@@ -33,7 +33,7 @@ def mixer(l, r):
         elif not j < len_r:
             res.append(l[i])
             i += 1
-        elif l[i] < r[j]:       # Именно сдесь происходит сортировка
+        elif l[i] < r[j]:       # Именно Здесь происходит сортировка
             res.append(l[i])
             i += 1
         else:
