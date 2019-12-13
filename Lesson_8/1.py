@@ -1,13 +1,18 @@
 """
+
 2019-12-12 Sikorskiy Yuriy
+cv.yury.v@pm.me
+
 1. Закодируйте любую строку из трех слов по алгоритму Хаффмана.
+
 """
 
 from collections import Counter
 
+
 # класс бинарного дерева
 class Btree:
-    def __init(self):
+    def __init__(self):
         self._root = None  # ссылка на корневой узел
         self._current_node = None  # выбранный узел
         self._nodes = list()  # список узлов  составляющих дерево
@@ -61,7 +66,7 @@ class Tree_jewish_scholar(Btree):
         self.create_grow_a_tree()  # построение дерева еврейского ученого
         self._coding_dict = dict()  # словарь соответствия символа и его двоичного кода
         self.create_coding_dict()
-        self._coding_str = ''       # Вид закодированной исходной текстовой строки
+        self._coding_str = ''  # Вид закодированной исходной текстовой строки
         self.create_coding_str()
 
     # расчет частоты повторения символов в строке
@@ -126,6 +131,7 @@ class Tree_jewish_scholar(Btree):
     def get_coding_str(self):
         return self._coding_str
 
+
 class Bnode_jewish_scholar(Bnode):
     def __init__(self, characters, frequency):
         super().__init__()
@@ -155,13 +161,13 @@ class Bnode_jewish_scholar(Bnode):
 
 
 def main():
-    test_str = 'папамама и черт рогатый'
+    test_str = 'папамама ичерт рогатый'
     print(f'Исходная строка: \'{test_str}\'')
     tree_jewish_scholar = Tree_jewish_scholar(test_str)
     print(f'Закодированная исходная строка:\n{tree_jewish_scholar.get_coding_str()}')
-    print('Словарь кодировок сиволов строки')
+    print('Словарь кодировок символов строки')
     tree_jewish_scholar.get_coding_dict()
+
 
 if __name__ == '__main__':
     main()
-
