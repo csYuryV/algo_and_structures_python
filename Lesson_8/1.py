@@ -2,17 +2,51 @@
 2019-12-12 Sikorskiy Yuriy
 1. Закодируйте любую строку из трех слов по алгоритму Хаффмана.
 """
+
+
 # класс бнарного дерева
 class Btree:
     def __init(self):
-        self._root = None       # ссылка на корневой узел
+        self._root = None  # ссылка на корневой узел
+        self._current_node = None  # выбранный узел
+        self._nodes = list()  # список узлов  составляющих дерево
 
-        self._nodes =list()     # список узлов  составляющих дерево
+    def create_node(self):
+        new_node = Bnode()
+        self._nodes.append(new_node)
+        return new_node
+
+    def set_root_node(self, node):
+        self._root = node
+
+    def get_root_node(self):
+        return self._root
+
 
 class Bnode:
     def __init___(self):
         self._owner = None
         self._children = dict(left=None, right=None)
+
+    def set_left_child(self, node):
+        self._children['left'] = node
+
+    def get_left_child(self):
+        return self._children['left']
+
+    def set_right_child(self, node):
+        self._children['right'] = node
+
+    def get_right_child(self):
+        return self._children['right']
+
+    def set_owner(self, owner):
+        self._owner = owner
+
+    def get_owner(self, owner):
+        return self._owner
+
+class
 
 # from sqlalchemy import create_engine
 # engine = create_engine('sqlite:///:memory:', echo=True)
@@ -78,4 +112,3 @@ class Bnode:
 # session.rollback()
 # print(f'ed_user.name = {ed_user.name}')
 # print(f'fake_user in session = {fake_user in session}')
-
